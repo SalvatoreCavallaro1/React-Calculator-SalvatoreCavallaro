@@ -6,7 +6,7 @@ import useRows from './hooks/useRows';
 
 function App() {
   const { rows, addRow, updateRow, removeRow } = useRows();
-  console.log(rows);
+  
   return (
     <div className="App">
       <h1>Welcome to Simple React Calculator</h1>
@@ -15,8 +15,13 @@ function App() {
           <Row key={row.id} id={row?.id} row={row} updateRow={updateRow} removeRow={removeRow} />
         ))}
       </div>
-      <button onClick={addRow}>Add Row</button>
-      <h2>Result: {calculateResult(rows)}</h2>
+      <button id="addButton" onClick={addRow}>Add Row</button>
+      {rows.length>=1?
+    <h2>Result: {calculateResult(rows)}</h2>
+    :
+    <h2>Add at least one Row</h2>  
+    }
+      
     </div>
   );
 }

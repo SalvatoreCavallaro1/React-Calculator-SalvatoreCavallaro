@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/Row.css';
+import useRows from '../hooks/useRows';
+
 
 const Row = ({ id, row, updateRow, removeRow }) => {
   const handleChange = (e) => {
@@ -7,18 +9,25 @@ const Row = ({ id, row, updateRow, removeRow }) => {
     updateRow(id, name, value);
   };
 
+
+
   const handleToggle = () => {
     updateRow(id, 'enabled', !row.enabled);
   };
 
   return (
     <div className="row">
-      <button onClick={() => removeRow(id)}>Remove</button>
-      <button onClick={handleToggle}>{row.enabled ? 'Disable' : 'Enable'}</button>
+      <button id="removeButton" onClick={() => removeRow(id)} >X</button>
+      
+      <input className="toggleB" type="checkbox" onChange={handleToggle} checked={row.enabled}></input>
+      
       <select name="sign" value={row.sign} onChange={handleChange} disabled={!row.enabled}>
+        
         <option value="+">+</option>
         <option value="-">-</option>
+        
       </select>
+      
       <input
         type="number"
         name="value"
