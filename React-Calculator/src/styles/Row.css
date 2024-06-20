@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .row button {
+    margin-right: 10px;
+  }
+  
+  .row select, .row input {
+    margin-left: 10px;
+    padding: 5px;
+  }

@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React,{ useState } from 'react'
 import './App.css'
+import Row from './components/Row';
+import calculateResult from './utils/calculateResult';
+import useRows from './hooks/useRows';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { rows, addRow, updateRow, removeRow } = useRows();
+  console.log(rows);
   return (
-    <>
+    <div className="App">
+      <h1>Welcome to Simple React Calculator</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {rows.map(row => (
+          <Row key={row.id} id={row?.id} row={row} updateRow={updateRow} removeRow={removeRow} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <button onClick={addRow}>Add Row</button>
+      <h2>Result: {calculateResult(rows)}</h2>
+    </div>
+  );
 }
 
 export default App
