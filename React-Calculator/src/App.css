@@ -8,13 +8,14 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 80vh;
+  height: 90vh;
   padding: 20;
   margin-top: 20;
   background-color: rgb(49, 49, 49);
   border: 1;
   border-radius: 5%;
-}
+  overflow-y:auto;
+  }
 
 #addButton{
   background-color: var(--dark-green);
