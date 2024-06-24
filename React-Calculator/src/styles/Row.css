@@ -26,8 +26,6 @@
     background-color: var(--red);
     border-radius: 100%;
     --s: 40px;
-    /* adjust this to control the size*/
-
     height: var(--s);
     width: auto;
 
@@ -36,11 +34,8 @@
 
 .toggleB {
     --s: 20px;
-    /* adjust this to control the size*/
-
     height: calc(var(--s) + var(--s)/5);
     width: auto;
-    /* some browsers need this */
     aspect-ratio: 2.25;
     border-radius: var(--s);
     margin: calc(var(--s)/2);

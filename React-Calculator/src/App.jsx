@@ -22,7 +22,7 @@ function App() {
       <div id="result">{calculateResult(rows)}</div>
       </>
     :
-    <h2 >Add at least one Row</h2>  
+    <h2 >Add at least one row</h2>  
     }
       
     </div>
