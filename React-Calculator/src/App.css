@@ -19,6 +19,7 @@
 
 #addButton{
   background-color: var(--dark-green) !important;
+  color: white;
 }
 
 #result{
