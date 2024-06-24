@@ -11,14 +11,14 @@
   height: 90vh;
   padding: 20;
   margin-top: 20;
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(49, 49, 49) !important;
   border: 1;
   border-radius: 5%;
   overflow-y:auto;
   }
 
 #addButton{
-  background-color: var(--dark-green);
+  background-color: var(--dark-green) !important;
 }
 
 #result{
@@ -27,5 +27,5 @@
   align-items: center;
   text-align: center;
   line-height: 50px;
-  background-color: #242424;
+  background-color: #242424 !important;
 }
